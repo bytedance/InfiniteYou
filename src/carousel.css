@@ -1,0 +1,90 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 0px solid #ccc;
+}
+
+.carousel-float {
+  position: absolute;
+  display: inline-flex;
+  left: 20px;
+  top: 20px;
+  z-index: 2; 
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.carousel-float img {
+  width: 80px; /* Adjust as needed */
+  height: auto;
+}
+
+/* The slider uses flexbox to arrange images in a row, and its width is set to double the original set */
+.carousel {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation-play-state: running;
+}
+
+.carousel-container::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 140px;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(32, 32, 32, 0), rgba(32, 32, 32, 1));
+  z-index: 1;
+}
+
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 140px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(32, 32, 32, 0), rgba(32, 32, 32, 1));
+  z-index: 1;
+}
+
+.carousel:hover {
+  animation-play-state: paused;
+}
+
+.carousel-scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.carousel-scroll-right {
+  animation: scroll-right 40s linear infinite;
+}
+
+.carousel img {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+  border-radius: 4px;
+  margin-right: 3px;
+}
+
+/* The keyframes move the slider from 0 to -50% of its width */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

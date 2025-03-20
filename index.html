@@ -1,1 +1,561 @@
-hello InfiniteYou
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="description" content="InfiniteYou: Flexible Photo Recrafting While Preserving Your Identity">
+  <meta name="keywords" content="InfiniteYou, Generative Models, Diffusion Transformer, Subject Personalization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InfiniteYou | ByteDance Intelligent Creation</title>
+
+  <link href="./src/css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/bulma.min.css">
+  <link rel="stylesheet" href="./src/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./src/academicons.min.css">
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/carousel.css">
+
+  <script src="./src/jquery.min.js"></script>
+  <script defer="" src="./src/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="font-family: bradley hand, cursive;">InfiniteYou: Flexible Photo Recrafting While Preserving Your Identity</span></h1>
+          <div class="publication-authors" style="font-size: 22px;">
+            <span class="author-block">
+              <a class="author-link" href="https://liming-jiang.com/" target="_blank">Liming Jiang</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a class="author-link" href="https://scholar.google.com/citations?user=0TIYjPAAAAAJ" target="_blank">Qing Yan</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a class="author-link" href="https://www.linkedin.com/in/yuminjia/" target="_blank">Yumin Jia</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a class="author-link" href="https://scholar.google.com/citations?user=-H18WY8AAAAJ" target="_blank">Zichuan Liu</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a class="author-link" href="https://scholar.google.com/citations?user=VeTCSyEAAAAJ" target="_blank">Hao Kang</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a class="author-link" href="https://scholar.google.com/citations?user=mFC0wp8AAAAJ" target="_blank">Xin Lu</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+          </div>
+
+          <div class="publication-authors" style="font-size: 22px; margin-bottom: 10px;">
+            <span class="author-block">
+              ByteDance Intelligent Creation</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/bytedance/InfiniteYou" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Model Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/ByteDance/InfiniteYou" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                  <span class="icon">
+                    <img src="icon/ai.png" alt="SVG Icon" style="width: 22px; height: 22px;">
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                    <img src="icon/hf.svg" alt="SVG Icon" style="width: 18px; height: 18px;">
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="column has-text-centered">
+    <div class="is-size-5 publication-authors">
+      <hr style="
+          width: 100%;
+          height: 0.7px;
+          background-color: rgba(255, 255, 255, 0.665);
+          margin-top: -15px;
+        ">
+      Create Infinite Photographs of You with Diffusion Transformers (DiTs) like FLUX!
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div style="margin-left: 10px; margin-right: 10px;">
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p1/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-left">
+          <!-- Original set of images -->
+          <img src="./images/p1/result_1.jpg" alt="Image 1">
+          <img src="./images/p1/result_2.jpg" alt="Image 2">
+          <img src="./images/p1/result_3.jpg" alt="Image 3">
+          <img src="./images/p1/result_4.jpg" alt="Image 4">
+          <img src="./images/p1/result_5.jpg" alt="Image 5">
+          <img src="./images/p1/result_6.jpg" alt="Image 6">
+          <img src="./images/p1/result_7.jpg" alt="Image 7">
+          <img src="./images/p1/result_8.jpg" alt="Image 8">
+          <img src="./images/p1/result_9.jpg" alt="Image 9">
+          <img src="./images/p1/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p1/result_1.jpg" alt="Image 1">
+          <img src="./images/p1/result_2.jpg" alt="Image 2">
+          <img src="./images/p1/result_3.jpg" alt="Image 3">
+          <img src="./images/p1/result_4.jpg" alt="Image 4">
+          <img src="./images/p1/result_5.jpg" alt="Image 5">
+          <img src="./images/p1/result_6.jpg" alt="Image 6">
+          <img src="./images/p1/result_7.jpg" alt="Image 7">
+          <img src="./images/p1/result_8.jpg" alt="Image 8">
+          <img src="./images/p1/result_9.jpg" alt="Image 9">
+          <img src="./images/p1/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p2/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-right">
+          <!-- Original set of images -->
+          <img src="./images/p2/result_1.jpg" alt="Image 1">
+          <img src="./images/p2/result_2.jpg" alt="Image 2">
+          <img src="./images/p2/result_3.jpg" alt="Image 3">
+          <img src="./images/p2/result_4.jpg" alt="Image 4">
+          <img src="./images/p2/result_5.jpg" alt="Image 5">
+          <img src="./images/p2/result_6.jpg" alt="Image 6">
+          <img src="./images/p2/result_7.jpg" alt="Image 7">
+          <img src="./images/p2/result_8.jpg" alt="Image 8">
+          <img src="./images/p2/result_9.jpg" alt="Image 9">
+          <img src="./images/p2/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p2/result_1.jpg" alt="Image 1">
+          <img src="./images/p2/result_2.jpg" alt="Image 2">
+          <img src="./images/p2/result_3.jpg" alt="Image 3">
+          <img src="./images/p2/result_4.jpg" alt="Image 4">
+          <img src="./images/p2/result_5.jpg" alt="Image 5">
+          <img src="./images/p2/result_6.jpg" alt="Image 6">
+          <img src="./images/p2/result_7.jpg" alt="Image 7">
+          <img src="./images/p2/result_8.jpg" alt="Image 8">
+          <img src="./images/p2/result_9.jpg" alt="Image 9">
+          <img src="./images/p2/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p3/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-left">
+          <!-- Original set of images -->
+          <img src="./images/p3/result_1.jpg" alt="Image 1">
+          <img src="./images/p3/result_2.jpg" alt="Image 2">
+          <img src="./images/p3/result_3.jpg" alt="Image 3">
+          <img src="./images/p3/result_4.jpg" alt="Image 4">
+          <img src="./images/p3/result_5.jpg" alt="Image 5">
+          <img src="./images/p3/result_6.jpg" alt="Image 6">
+          <img src="./images/p3/result_7.jpg" alt="Image 7">
+          <img src="./images/p3/result_8.jpg" alt="Image 8">
+          <img src="./images/p3/result_9.jpg" alt="Image 9">
+          <img src="./images/p3/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p3/result_1.jpg" alt="Image 1">
+          <img src="./images/p3/result_2.jpg" alt="Image 2">
+          <img src="./images/p3/result_3.jpg" alt="Image 3">
+          <img src="./images/p3/result_4.jpg" alt="Image 4">
+          <img src="./images/p3/result_5.jpg" alt="Image 5">
+          <img src="./images/p3/result_6.jpg" alt="Image 6">
+          <img src="./images/p3/result_7.jpg" alt="Image 7">
+          <img src="./images/p3/result_8.jpg" alt="Image 8">
+          <img src="./images/p3/result_9.jpg" alt="Image 9">
+          <img src="./images/p3/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p4/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-right">
+          <!-- Original set of images -->
+          <img src="./images/p4/result_1.jpg" alt="Image 1">
+          <img src="./images/p4/result_2.jpg" alt="Image 2">
+          <img src="./images/p4/result_3.jpg" alt="Image 3">
+          <img src="./images/p4/result_4.jpg" alt="Image 4">
+          <img src="./images/p4/result_5.jpg" alt="Image 5">
+          <img src="./images/p4/result_6.jpg" alt="Image 6">
+          <img src="./images/p4/result_7.jpg" alt="Image 7">
+          <img src="./images/p4/result_8.jpg" alt="Image 8">
+          <img src="./images/p4/result_9.jpg" alt="Image 9">
+          <img src="./images/p4/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p4/result_1.jpg" alt="Image 1">
+          <img src="./images/p4/result_2.jpg" alt="Image 2">
+          <img src="./images/p4/result_3.jpg" alt="Image 3">
+          <img src="./images/p4/result_4.jpg" alt="Image 4">
+          <img src="./images/p4/result_5.jpg" alt="Image 5">
+          <img src="./images/p4/result_6.jpg" alt="Image 6">
+          <img src="./images/p4/result_7.jpg" alt="Image 7">
+          <img src="./images/p4/result_8.jpg" alt="Image 8">
+          <img src="./images/p4/result_9.jpg" alt="Image 9">
+          <img src="./images/p4/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p5/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-left">
+          <!-- Original set of images -->
+          <img src="./images/p5/result_1.jpg" alt="Image 1">
+          <img src="./images/p5/result_2.jpg" alt="Image 2">
+          <img src="./images/p5/result_3.jpg" alt="Image 3">
+          <img src="./images/p5/result_4.jpg" alt="Image 4">
+          <img src="./images/p5/result_5.jpg" alt="Image 5">
+          <img src="./images/p5/result_6.jpg" alt="Image 6">
+          <img src="./images/p5/result_7.jpg" alt="Image 7">
+          <img src="./images/p5/result_8.jpg" alt="Image 8">
+          <img src="./images/p5/result_9.jpg" alt="Image 9">
+          <img src="./images/p5/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p5/result_1.jpg" alt="Image 1">
+          <img src="./images/p5/result_2.jpg" alt="Image 2">
+          <img src="./images/p5/result_3.jpg" alt="Image 3">
+          <img src="./images/p5/result_4.jpg" alt="Image 4">
+          <img src="./images/p5/result_5.jpg" alt="Image 5">
+          <img src="./images/p5/result_6.jpg" alt="Image 6">
+          <img src="./images/p5/result_7.jpg" alt="Image 7">
+          <img src="./images/p5/result_8.jpg" alt="Image 8">
+          <img src="./images/p5/result_9.jpg" alt="Image 9">
+          <img src="./images/p5/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p6/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-right">
+          <!-- Original set of images -->
+          <img src="./images/p6/result_1.jpg" alt="Image 1">
+          <img src="./images/p6/result_2.jpg" alt="Image 2">
+          <img src="./images/p6/result_3.jpg" alt="Image 3">
+          <img src="./images/p6/result_4.jpg" alt="Image 4">
+          <img src="./images/p6/result_5.jpg" alt="Image 5">
+          <img src="./images/p6/result_6.jpg" alt="Image 6">
+          <img src="./images/p6/result_7.jpg" alt="Image 7">
+          <img src="./images/p6/result_8.jpg" alt="Image 8">
+          <img src="./images/p6/result_9.jpg" alt="Image 9">
+          <img src="./images/p6/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p6/result_1.jpg" alt="Image 1">
+          <img src="./images/p6/result_2.jpg" alt="Image 2">
+          <img src="./images/p6/result_3.jpg" alt="Image 3">
+          <img src="./images/p6/result_4.jpg" alt="Image 4">
+          <img src="./images/p6/result_5.jpg" alt="Image 5">
+          <img src="./images/p6/result_6.jpg" alt="Image 6">
+          <img src="./images/p6/result_7.jpg" alt="Image 7">
+          <img src="./images/p6/result_8.jpg" alt="Image 8">
+          <img src="./images/p6/result_9.jpg" alt="Image 9">
+          <img src="./images/p6/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-float">
+          <img src="./images/p7/original.jpg" alt="Original">
+        </div>
+        <div class="carousel carousel-scroll-left">
+          <!-- Original set of images -->
+          <img src="./images/p7/result_1.jpg" alt="Image 1">
+          <img src="./images/p7/result_2.jpg" alt="Image 2">
+          <img src="./images/p7/result_3.jpg" alt="Image 3">
+          <img src="./images/p7/result_4.jpg" alt="Image 4">
+          <img src="./images/p7/result_5.jpg" alt="Image 5">
+          <img src="./images/p7/result_6.jpg" alt="Image 6">
+          <img src="./images/p7/result_7.jpg" alt="Image 7">
+          <img src="./images/p7/result_8.jpg" alt="Image 8">
+          <img src="./images/p7/result_9.jpg" alt="Image 9">
+          <img src="./images/p7/result_10.jpg" alt="Image 10">
+          <!-- Duplicate set of images -->
+          <img src="./images/p7/result_1.jpg" alt="Image 1">
+          <img src="./images/p7/result_2.jpg" alt="Image 2">
+          <img src="./images/p7/result_3.jpg" alt="Image 3">
+          <img src="./images/p7/result_4.jpg" alt="Image 4">
+          <img src="./images/p7/result_5.jpg" alt="Image 5">
+          <img src="./images/p7/result_6.jpg" alt="Image 6">
+          <img src="./images/p7/result_7.jpg" alt="Image 7">
+          <img src="./images/p7/result_8.jpg" alt="Image 8">
+          <img src="./images/p7/result_9.jpg" alt="Image 9">
+          <img src="./images/p7/result_10.jpg" alt="Image 10">
+        </div>
+      </div>
+      <hr style="
+          width: 100%;
+          height: 0.7px;
+          background-color: rgba(255, 255, 255, 0.665);
+          margin-top: 5px;
+        ">
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -15px">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Achieving flexible and high-fidelity identity-preserved image generation remains formidable, particularly with advanced Diffusion Transformers (DiTs) like FLUX. 
+            We introduce <b>InfiniteYou (InfU)</b>, one of the earliest robust frameworks leveraging DiTs for this task. 
+            InfU addresses significant issues of existing methods, such as insufficient identity similarity, poor text-image alignment, and low generation quality and aesthetics. 
+            Central to InfU is InfuseNet, a component that injects identity features into the DiT base model via residual connections, enhancing identity similarity while maintaining generation capabilities. 
+            A multi-stage training strategy, including pretraining and supervised fine-tuning (SFT) with synthetic single-person-multiple-sample (SPMS) data, further improves text-image alignment, 
+            ameliorates image quality, and alleviates face copy-pasting. Extensive experiments demonstrate that InfU achieves state-of-the-art performance, surpassing existing baselines. 
+            In addition, the plug-and-play design of InfU ensures compatibility with various existing methods, offering a valuable contribution to the broader community.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <div class="container is-max-desktop" style="margin-top: 25px">
+      <img src="./images/teaser.jpg" width="100%">
+    </div>
+    <div class="content has-text-centered" style="margin-top: 5px">
+      <p style="font-size:16px; font:caption; font-family:Georgia, 'Times New Roman', Times, serif;">
+        InfiniteYou generates identity-preserved images with exceptional identity similarity, text-image alignment, quality, and aesthetics.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -15px">
+  <div class="container is-max-desktop">
+    <!-- Comparison. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Comparison with State-of-the-Art Relevant Methods</h2>
+      </div>
+    </div>
+    <!--/ Comparison. -->
+    <div class="container is-max-desktop" style="margin-top: 15px">
+      <img src="./images/comparative_results.jpg" width="100%">
+    </div>
+    <div class="content has-text-justified" style="margin-top: 10px">
+      <p style="font-size:16px; font:caption; font-family:Georgia, 'Times New Roman', Times, serif;">
+        Qualitative comparison results of InfU with the state-of-the-art baselines, FLUX.1-dev IP-Adapter and PuLID-FLUX. 
+        The identity similarity and text-image alignment of the results generated by FLUX.1-dev IP-Adapter (IPA) are inadequate.
+        PuLID-FLUX generates images with decent identity similarity. However, it suffers from poor text-image alignment (Columns 1, 2, 4), 
+        and the image quality (<i>e.g.</i>, bad hands in Column 5) and aesthetic appeal are degraded.
+        In addition, the face copy-paste issue of PuLID-FLUX is evident (Column 5). 
+        In comparison, the proposed InfU outperforms the baselines across all dimensions. 
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -15px">
+  <div class="container is-max-desktop">
+    <!-- Plug and Play. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Plug-and-Play Property with Off-the-Shelf Popular Approaches</h2>
+      </div>
+    </div>
+    <!--/ Plug and Play. -->
+    <div class="container is-max-desktop" style="margin-top: 15px">
+      <img src="./images/plug_and_play.jpg" width="100%">
+    </div>
+    <div class="content has-text-justified" style="margin-top: 10px">
+      <p style="font-size:16px; font:caption; font-family:Georgia, 'Times New Roman', Times, serif;">
+        InfU features a desirable plug-and-play design, compatible with many existing methods. 
+        It naturally supports base model replacement with any variants of FLUX.1-dev, such as FLUX.1-schnell for more efficient generation (<i>e.g.</i>, in 4 steps).
+        The compatibility with ControlNets and LoRAs provides more controllability and flexibility for customized tasks.
+        Notably, the compatibility with OminiControl extends our potential for multi-concept personalization, such as interacted identity (ID) and object personalized generation.
+        InfU is also compatible with IP-Adapter (IPA) for stylization of personalized images, producing decent results when injecting style references via IPA.
+        Our plug-and-play feature may extend to even more approaches, providing valuable contributions to the broader community.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -15px">
+  <div class="container is-max-desktop">
+    <!-- Disclaimer and Licenses. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Disclaimer and Licenses</h2>
+        <div class="content has-text-justified">
+          <p>
+            Most images used on this website and related demos are sourced from consented subjects, with a few taken from public domains or generated by the models. 
+            These pictures are intended solely to showcase the capabilities of our research. If you have any concerns, please feel free to contact us, and we will promptly remove any inappropriate content.
+          </p>
+          <p style="margin-top: -5px">
+            The use of the released code, model, and demo must strictly adhere to the respective licenses. Our code is released under the 
+            <span class="publication-authors"><a href="https://github.com/bytedance/InfiniteYou/blob/main/LICENSE" target="_blank">Apache 2.0 License</a>, and our model is released under 
+            <span class="publication-authors"><a href="https://huggingface.co/ByteDance/InfiniteYou/blob/main/LICENSE" target="_blank">the Creative Commons Attribution-NonCommercial 4.0 International Public License</a> 
+            for academic research purposes only. Any manual or automatic downloading of the face models from
+            <span class="publication-authors"><a href="https://github.com/deepinsight/insightface" target="_blank">InsightFace</a></span>, 
+            the <span class="publication-authors"><a href="https://huggingface.co/black-forest-labs/FLUX.1-dev" target="_blank">FLUX.1-dev</a></span> base model, LoRAs, <i>etc.</i>, must follow 
+            their original licenses and be used only for academic research purposes.
+          </p>
+          <p style="margin-top: -5px">
+            This research aims to positively impact the field of Generative AI.
+            Users are granted the freedom to create images using this tool, but they must comply with local laws and use it responsibly.
+            The developers do not assume any responsibility for potential misuse by users.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+    <!--/ Disclaimer. -->
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -15px">
+  <div class="container is-max-desktop">
+    <!-- Acknowledgments. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Acknowledgments</h2>
+        <div class="content has-text-justified">
+          <p>
+            We sincerely acknowledge the insightful discussions from Stathi Fotiadis, Min Jin Chong, Xiao Yang, Tiancheng Zhi, Jing Liu, and Xiaohui Shen. 
+            We genuinely appreciate the help from Jincheng Liang and Lu Guo with our user study and qualitative evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Acknowledgement. -->
+
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -15px">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Citation BibTeX</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you find InfiniteYou useful for your research or applications, please cite our paper:
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="code-container" style="position: relative;">
+      <script>
+        function handle_copy_click() {
+          const icon_copy = document.getElementById('icon-copy');
+          const icon_done = document.getElementById('icon-done');
+          var code_text = document.getElementById("citation").innerText;
+
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(code_text)
+              .then(function() {
+                console.log("Code copied to clipboard!");
+                icon_copy.classList.toggle('hidden');
+                icon_done.classList.toggle('hidden');
+              })
+              .catch(function(err) {
+                console.error("Error copying code: " + err);
+              });
+          }
+        }
+      </script>
+      <div class="copy-clipboard-button" role="button" tabindex="0" onclick="handle_copy_click()">
+        <svg id="icon-copy" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="button-svg-icon">
+          <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+        </svg>
+        <svg id="icon-done" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="button-svg-icon hidden">
+          <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+        </svg>
+      </div>
+    <pre class="bib-tex"><code id="citation">@article{jiang2025infiniteyou,
+  title={{InfiniteYou}: Flexible Photo Recrafting While Preserving Your Identity},
+  author={Jiang, Liming and Yan, Qing and Jia, Yumin and Liu, Zichuan and Kang, Hao and Lu, Xin},
+  journal={arXiv preprint},
+  volume={arXiv:2503.xxxxx},
+  year={2025}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer" style="margin-top: -10px">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center">
+            The source code of this project page can be found at
+            <span class="publication-authors"><a href="" target="_blank">InfiniteYou Github Pages</a></span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body></html>
