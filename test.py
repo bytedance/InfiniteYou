@@ -48,7 +48,11 @@ def main():
     assert args.model_version in ['aes_stage2', 'sim_stage1'], 'Currently only supports model versions: aes_stage2 | sim_stage1'
 
     # Set cuda device
+    if torch.cuda.is_available():
     torch.cuda.set_device(args.cuda_device)
+    elif torch.backends.mps.is_available():
+        torch.set_default_device("mps:0")
+    print(f'Using cuda device: {torch.empty(1).device}')
 
     # Load pipeline
     infu_model_path = os.path.join(args.model_dir, f'infu_flux_{args.infu_flux_version}', args.model_version)
