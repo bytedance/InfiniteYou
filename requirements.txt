@@ -7,13 +7,13 @@ httpx==0.28.1
 huggingface-hub==0.28.1
 insightface==0.7.3
 numpy==1.26.4
-onnxruntime==1.19.2
+onnxruntime==1.21.0
 opencv-python==4.11.0.86
 pillow==10.4.0
 pillow-avif-plugin==1.5.0
 pillow-heif==0.21.0
 sentencepiece==0.2.0
-torch==2.2.1
-torchvision==0.17.1
+torch==2.6.0
+torchvision==0.21.0
 transformers==4.48.0
 peft==0.14.0
