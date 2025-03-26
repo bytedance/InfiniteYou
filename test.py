@@ -49,7 +49,7 @@ def main():
 
     # Set cuda device
     if torch.cuda.is_available():
-    torch.cuda.set_device(args.cuda_device)
+        torch.cuda.set_device(args.cuda_device)
     elif torch.backends.mps.is_available():
         torch.set_default_device("mps:0")
     print(f'Using cuda device: {torch.empty(1).device}')
