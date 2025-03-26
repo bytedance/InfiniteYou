@@ -21,7 +21,8 @@ import cv2
 import numpy as np
 import torch
 from diffusers.models import FluxControlNetModel
-from facexlib.recognition import init_recognition_model
+from facexlib.recognition import Backbone
+from facexlib.utils import load_file_from_url
 from huggingface_hub import snapshot_download
 from insightface.app import FaceAnalysis
 from insightface.utils import face_align
@@ -29,6 +30,20 @@ from PIL import Image
 
 from .pipeline_flux_infusenet import FluxInfuseNetPipeline
 from .resampler import Resampler
+
+def init_recognition_model(model_name, half=False, device='cuda', model_rootpath=None):
+    if model_name == 'arcface':
+        model = Backbone(num_layers=50, drop_ratio=0.6, mode='ir_se').to(device).eval()
+        model_url = 'https://github.com/xinntao/facexlib/releases/download/v0.1.0/recognition_arcface_ir_se50.pth'
+    else:
+        raise NotImplementedError(f'{model_name} is not implemented.')
+
+    model_path = load_file_from_url(
+        url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
+    model.load_state_dict(torch.load(model_path, map_location=device), strict=True)
+    model.eval()
+    model = model.to(device)
+    return model
 
 def seed_everything(seed, deterministic=False):
     """Set random seed.
@@ -44,8 +59,8 @@ def seed_everything(seed, deterministic=False):
     np.random.seed(seed)
     torch.manual_seed(seed)
     if torch.cuda.is_available():
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
     elif torch.backends.mps.is_available():
         torch.mps.manual_seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
@@ -100,7 +115,7 @@ def resize_and_pad_image(source_img, target_img_size):
     # Get original and target sizes
     source_img_size = source_img.size
     target_width, target_height = target_img_size
-    
+
     # Determine the new size based on the shorter side of target_img
     if target_width <= target_height:
         new_width = target_width
@@ -108,26 +123,26 @@ def resize_and_pad_image(source_img, target_img_size):
     else:
         new_height = target_height
         new_width = int(target_height * (source_img_size[0] / source_img_size[1]))
-    
+
     # Resize the source image using LANCZOS interpolation for high quality
     resized_source_img = source_img.resize((new_width, new_height), Image.LANCZOS)
-    
+
     # Compute padding to center resized image
     pad_left = (target_width - new_width) // 2
     pad_top = (target_height - new_height) // 2
-    
+
     # Create a new image with white background
     padded_img = Image.new("RGB", target_img_size, (255, 255, 255))
     padded_img.paste(resized_source_img, (pad_left, pad_top))
-    
+
     return padded_img
 
 
 class InfUFluxPipeline:
     def __init__(
-            self, 
-            base_model_path, 
-            infu_model_path, 
+            self,
+            base_model_path,
+            infu_model_path,
             insightface_root_path = './',
             image_proj_num_tokens=8,
             infu_flux_version='v1.0',
@@ -136,7 +151,7 @@ class InfUFluxPipeline:
 
         self.infu_flux_version = infu_flux_version
         self.model_version = model_version
-        
+
         # Load pipeline
         try:
             infusenet_path = os.path.join(infu_model_path, 'InfuseNetModel')
@@ -195,15 +210,15 @@ class InfUFluxPipeline:
         self.image_proj_model = image_proj_model
 
         # Load face encoder
-        self.app_640 = FaceAnalysis(name='antelopev2', 
+        self.app_640 = FaceAnalysis(name='antelopev2',
                                 root=insightface_root_path, providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
         self.app_640.prepare(ctx_id=0, det_size=(640, 640))
 
-        self.app_320 = FaceAnalysis(name='antelopev2', 
+        self.app_320 = FaceAnalysis(name='antelopev2',
                                 root=insightface_root_path, providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
         self.app_320.prepare(ctx_id=0, det_size=(320, 320))
 
-        self.app_160 = FaceAnalysis(name='antelopev2', 
+        self.app_160 = FaceAnalysis(name='antelopev2',
                                 root=insightface_root_path, providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
         self.app_160.prepare(ctx_id=0, det_size=(160, 160))
 
@@ -225,7 +240,7 @@ class InfUFluxPipeline:
         face_info = self.app_640.get(id_image_cv2)
         if len(face_info) > 0:
             return face_info
-        
+
         face_info = self.app_320.get(id_image_cv2)
         if len(face_info) > 0:
             return face_info
@@ -246,14 +261,14 @@ class InfUFluxPipeline:
         infusenet_conditioning_scale = 1.0,
         infusenet_guidance_start = 0.0,
         infusenet_guidance_end = 1.0,
-    ):        
+    ):
         # Extract ID embeddings
         print('Preparing ID embeddings')
         id_image_cv2 = cv2.cvtColor(np.array(id_image), cv2.COLOR_RGB2BGR)
         face_info = self._detect_face(id_image_cv2)
         if len(face_info) == 0:
             raise ValueError('No face detected in the input ID image')
-        
+
         face_info = sorted(face_info, key=lambda x:(x['bbox'][2]-x['bbox'][0])*(x['bbox'][3]-x['bbox'][1]))[-1] # only use the maximum face
         landmark = face_info['kps']
         id_embed = extract_arcface_bgr_embedding(id_image_cv2, landmark, self.arcface_model)
@@ -266,7 +281,7 @@ class InfUFluxPipeline:
             id_embed = id_embed.repeat(1, 1, 1)
             id_embed = id_embed.view(bs_embed * 1, seq_len, -1)
             id_embed = id_embed.to(device=torch.empty(1).device, dtype=torch.bfloat16)
-        
+
         # Load control image
         print('Preparing the control image')
         if control_image is not None:

@@ -49,7 +49,7 @@ def main():
 
     # Set cuda device
     if torch.cuda.is_available():
-    torch.cuda.set_device(args.cuda_device)
+        torch.cuda.set_device(args.cuda_device)
     elif torch.backends.mps.is_available():
         torch.set_default_device("mps:0")
     print(f'Using cuda device: {torch.empty(1).device}')
@@ -73,7 +73,7 @@ def main():
     if args.enable_anti_blur_lora:
         loras.append([os.path.join(lora_dir, 'flux_anti_blur_lora.safetensors'), 'anti_blur', 1.0])
     pipe.load_loras(loras)
-    
+
     # Perform inference
     if args.seed == 0:
         args.seed = torch.seed() & 0xFFFFFFFF
@@ -88,7 +88,7 @@ def main():
         infusenet_guidance_start=args.infusenet_guidance_start,
         infusenet_guidance_end=args.infusenet_guidance_end,
     )
-    
+
     # Save results
     os.makedirs(args.out_results_dir, exist_ok=True)
     index = len(os.listdir(args.out_results_dir))
