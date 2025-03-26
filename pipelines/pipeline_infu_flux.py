@@ -222,16 +222,17 @@ class InfUFluxPipeline:
         self.image_proj_model = image_proj_model
 
         # Load face encoder
+        providers = ['CUDAExecutionProvider', 'CPUExecutionProvider'] if torch.cuda.is_available() else ['CPUExecutionProvider']
         self.app_640 = FaceAnalysis(name='antelopev2', 
-                                root=insightface_root_path, providers=['CPUExecutionProvider'])
+                                root=insightface_root_path, providers=providers)
         self.app_640.prepare(ctx_id=0, det_size=(640, 640))
 
         self.app_320 = FaceAnalysis(name='antelopev2', 
-                                root=insightface_root_path, providers=['CPUExecutionProvider'])
+                                root=insightface_root_path, providers=providers)
         self.app_320.prepare(ctx_id=0, det_size=(320, 320))
 
         self.app_160 = FaceAnalysis(name='antelopev2', 
-                                root=insightface_root_path, providers=['CPUExecutionProvider'])
+                                root=insightface_root_path, providers=providers)
         self.app_160.prepare(ctx_id=0, det_size=(160, 160))
 
         self.arcface_model = init_arcface_model(device=self.device)
