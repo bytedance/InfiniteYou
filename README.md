@@ -159,3 +159,22 @@ If you find InfiniteYou useful for your research or applications, please cite ou
 ```
 
 We also appreciate it if you could give a star :star: to this repository. Thanks a lot!
+
+## Build
+
+To build and run the project, follow these steps:
+
+* Ensure you have the necessary dependencies installed. You can install them by running:
+  ```bash
+  pip install -r requirements.txt
+  ```
+* Download the required models. This can be done by running the `download_models()` function in `app.py`.
+* To run the local inference script, use the following command:
+  ```bash
+  python test.py --id_image ./assets/examples/yann-lecun_resize.jpg --prompt "A man, portrait, cinematic" --out_results_dir ./results
+  ```
+* To launch the local Gradio demo, run:
+  ```bash
+  python app.py
+  ```
+* For more details on the arguments and options, refer to the comments and documentation in `test.py` and `app.py`.
