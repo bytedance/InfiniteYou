@@ -52,12 +52,26 @@ ByteDance Intelligent Creation
 
 ## 🔧 Requirements and Installation
 
-### Dependencies
+Python Version: >=3.10, <=3.12
 
 Simply run this one-line command to install (feel free to create a `python3` virtual environment before you run):
 
 ```bash
 pip install -r requirements.txt
+```
+As the weights files are downloading from Hugging Face, you will need to install huggingface-cli, git, and git-lfs. Assume that you have git installed.
+```bash
+git lfs install
+pip install -U "huggingface_hub[cli]"
+```
+
+Then, generate your access token according to Hugging Face Security Tokens and login via huggingface-cli.
+
+If you encounter an error related to libstdc++.so.6 GLIBCXX_3.4.32, please verify your libstdc++ version and enviroment path. Try to install the updated version with the following script:
+
+```bash
+sudo apt-get update
+sudo apt-get install --only-upgrade libstdc++6
 ```
 
 ### Memory Requirements 
