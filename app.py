@@ -295,6 +295,9 @@ with gr.Blocks() as demo:
         """
     )
 
+if torch.backends.mps.is_available():
+    torch.set_default_device("mps:0")
+
 download_models()
 
 prepare_pipeline(model_version=ModelVersion.DEFAULT_VERSION, enable_realism=ENABLE_REALISM_DEFAULT, enable_anti_blur=ENABLE_ANTI_BLUR_DEFAULT)
