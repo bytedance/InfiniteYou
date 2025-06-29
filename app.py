@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import gc
-
+import os
 import gradio as gr
 import pillow_avif
 import torch
@@ -79,13 +79,15 @@ def prepare_pipeline(model_version, enable_realism, enable_anti_blur):
         gc.collect()
         torch.cuda.empty_cache()
 
-        model_path = f'./models/InfiniteYou/infu_flux_v1.0/{model_version}'
-        print(f'Loading model from {model_path}')
+        # model_path = f'./models/InfiniteYou/infu_flux_v1.0/{model_version}'
+        model_path = "/disk1/fujm/InfiniteYou_model/infu_flux_v1.0/aes_stage2"
+        # print(f'Loading model from {model_path}')
 
         pipeline = InfUFluxPipeline(
-            base_model_path='./models/FLUX.1-dev',
+            base_model_path='/disk1/fujm/FLUX.1-dev',
             infu_model_path=model_path,
-            insightface_root_path='./models/InfiniteYou/supports/insightface',
+            # insightface_root_path='./models/InfiniteYou/supports/insightface',
+            insightface_root_path = "/disk1/fujm/InfiniteYou_model/supports/insightface",
             image_proj_num_tokens=8,
             infu_flux_version='v1.0',
             model_version=model_version,
@@ -94,11 +96,19 @@ def prepare_pipeline(model_version, enable_realism, enable_anti_blur):
         loaded_pipeline_config['pipeline'] = pipeline
 
     pipeline.pipe.delete_adapters(['realism', 'anti_blur'])
+    # loras = []
+    # if enable_realism:
+    #     loras.append(['./models/InfiniteYou/supports/optional_loras/flux_realism_lora.safetensors', 'realism', 1.0])
+    # if enable_anti_blur:
+    #     loras.append(['./models/InfiniteYou/supports/optional_loras/flux_anti_blur_lora.safetensors', 'anti_blur', 1.0])
+    # pipeline.load_loras(loras)
+
     loras = []
+    lora_dir = "/disk1/fujm/InfiniteYou_model/supports/optional_loras"
     if enable_realism:
-        loras.append(['./models/InfiniteYou/supports/optional_loras/flux_realism_lora.safetensors', 'realism', 1.0])
+        loras.append([os.path.join(lora_dir, 'flux_realism_lora.safetensors'), 'realism', 1.0])
     if enable_anti_blur:
-        loras.append(['./models/InfiniteYou/supports/optional_loras/flux_anti_blur_lora.safetensors', 'anti_blur', 1.0])
+        loras.append([os.path.join(lora_dir, 'flux_anti_blur_lora.safetensors'), 'anti_blur', 1.0])
     pipeline.load_loras(loras)
 
     return pipeline
@@ -302,7 +312,7 @@ with gr.Blocks() as demo:
         """
     )
 
-download_models()
+# download_models()
 
 prepare_pipeline(model_version=ModelVersion.DEFAULT_VERSION, enable_realism=ENABLE_REALISM_DEFAULT, enable_anti_blur=ENABLE_ANTI_BLUR_DEFAULT)
 
