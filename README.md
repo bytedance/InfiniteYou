@@ -9,7 +9,7 @@
 [**Hao Kang**](https://scholar.google.com/citations?user=VeTCSyEAAAAJ)&nbsp;&nbsp;&nbsp;&nbsp;
 [**Xin Lu**](https://scholar.google.com/citations?user=mFC0wp8AAAAJ)<br />
 ByteDance Intelligent Creation<br />
-**ICCV 2025**
+**ICCV 2025 (<span style="color:#F44336">Highlight</span>)**
 
 <a href="https://bytedance.github.io/InfiniteYou"><img src="https://img.shields.io/static/v1?label=Project&message=Page&color=blue&logo=github-pages"></a> &ensp;
 <a href="https://arxiv.org/abs/2503.16418"><img src="https://img.shields.io/static/v1?label=ArXiv&message=Paper&color=darkred&logo=arxiv"></a> &ensp;
@@ -25,6 +25,8 @@ ByteDance Intelligent Creation<br />
 
 
 ## 🔥 News
+
+- [07/2025] 🔥 The [paper](https://arxiv.org/abs/2503.16418) of InfiniteYou is selected as ICCV 2025 (<span style="color:#F44336">**Highlight**</span>).
 
 - [06/2025] 🔥 The [paper](https://arxiv.org/abs/2503.16418) of InfiniteYou is accepted to ICCV 2025.
 
