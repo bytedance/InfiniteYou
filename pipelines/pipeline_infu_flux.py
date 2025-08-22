@@ -194,7 +194,7 @@ class InfUFluxPipeline:
             ff_mult=4,
         )
         image_proj_model_path = os.path.join(infu_model_path, 'image_proj_model.bin')
-        ipm_state_dict = torch.load(image_proj_model_path, map_location="cpu")
+        ipm_state_dict = torch.load(image_proj_model_path, map_location="cpu", weights_only=True)
         image_proj_model.load_state_dict(ipm_state_dict['image_proj'])
         del ipm_state_dict
         image_proj_model.to('cuda', torch.bfloat16)

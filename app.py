@@ -79,7 +79,12 @@ def prepare_pipeline(model_version, enable_realism, enable_anti_blur):
         gc.collect()
         torch.cuda.empty_cache()
 
-        model_path = f'./models/InfiniteYou/infu_flux_v1.0/{model_version}'
+        if model_version == 'aes_stage2':
+            model_path = f'./models/InfiniteYou/infu_flux_v1.0/aes_stage2'
+        elif model_version == 'sim_stage1':
+            model_path = f'./models/InfiniteYou/infu_flux_v1.0/sim_stage1'
+        else:
+            raise ValueError(f'Model version {model_version} not supported.')
         print(f'Loading model from {model_path}')
 
         pipeline = InfUFluxPipeline(
@@ -307,5 +312,6 @@ download_models()
 prepare_pipeline(model_version=ModelVersion.DEFAULT_VERSION, enable_realism=ENABLE_REALISM_DEFAULT, enable_anti_blur=ENABLE_ANTI_BLUR_DEFAULT)
 
 demo.queue()
-demo.launch(server_name='0.0.0.0')  # IPv4
+demo.launch(server_name='localhost')  # localhost
+# demo.launch(server_name='0.0.0.0')  # IPv4
 # demo.launch(server_name='[::]')  # IPv6
